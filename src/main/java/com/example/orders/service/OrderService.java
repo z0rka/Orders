@@ -99,7 +99,7 @@ public class OrderService {
         }
 
         Optional<Order> order = orderRepository.findById(orderId);
-        Optional<Product> product = productRepository.findByName(productName);
+        Optional<Product> product = productRepository.findFirstByName(productName);
 
         buildAndSaveOrderedProduct(order, product);
     }
